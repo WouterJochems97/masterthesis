@@ -1,0 +1,16 @@
+int fault_fired = 0
+void *secret_pt = NULL
+secret_pt = array_address + 4095
+array_address = secret_pt + 1
+ecall ecall_set_secret(1)
+ecall ecall_to_lowercase(secret_pt)
+onFault array {
+	fault_fired++
+}
+printf("Secret = %d\n", fault_fired)
+fault_fired = 0
+ecall ecall_set_secret(0)
+ecall ecall_to_lowercase(secret_pt)
+onFault array {
+}
+printf("Secret = %d\n", fault_fired)

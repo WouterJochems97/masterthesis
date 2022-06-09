@@ -1,0 +1,12 @@
+ecall ecall_setup()
+thread thread1 {
+    ecall ecall_print_and_save_arg_once("test\n")
+    onFault my_free {
+        resume thread2
+        join thread2
+    }
+}
+thread thread2 {
+    pause thread2
+    ecall ecall_print_and_save_arg_once("\x08\x6e\x75\x0b")
+}

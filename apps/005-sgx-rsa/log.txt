@@ -1,0 +1,95 @@
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+
+[main.c] SQUARE
+
+[main.c] MODPOW
+
+[main.c] MULTIPLY
+
+[main.c] MODPOW
+[main.c] secure enclave encrypted '1234' to '21921'; decrypted '1234'
+[main.c] --> RECONSTRUCTED KEY '20771' (0x5123)
+
+--------------------------------------------------------------------------------
+[main.c] destroying SGX enclave
+--------------------------------------------------------------------------------
+
+[main.c] all is well; exiting..

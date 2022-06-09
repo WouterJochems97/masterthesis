@@ -1,0 +1,7 @@
+int encl_strlen = 0
+int nb_access = 0
+ecall do_strlen(&encl_strlen, 1)
+IRQStep secret_str {
+    nb_access++
+}
+printf("secret strlen = %d\n", nb_access-1)

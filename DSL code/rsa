@@ -1,0 +1,20 @@
+int cipher
+int plain
+uint32_t mask = 0x10000
+uint16_t key = 0
+ecall ecall_rsa_encode(&cipher, 1234)
+ecall ecall_rsa_decode(&plain, &cipher)
+onFault modpow {
+    onFault square {
+	if(mask == 1) {mask = 0x10000;key=0;}
+        mask = mask >> 1
+        onFault modpow {
+        }
+    }
+    onFault multiply {
+        key |= mask
+        onFault modpow {
+        }
+    }
+}
+printf("Key retrieved: %d\n", key);

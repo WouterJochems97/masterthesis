@@ -1,0 +1,19 @@
+ecall ecall_setup()
+int stepped = 0
+thread thread1 {
+	ecall ecall_checker_thread(NULL)
+	IRQStep ecall_checker_thread {
+		stepped++
+		if(stepped==192) {
+		    do_irq = 0
+		    onFault ecall_checker_thread {
+			    resume thread2
+			    join thread2
+		    }
+		; }
+	}
+}
+thread thread2 {
+	pause thread2
+	ecall ecall_writer_thread()
+}

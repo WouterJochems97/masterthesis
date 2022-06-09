@@ -1,0 +1,24 @@
+int tsc1
+int tsc2
+int med
+char *pwd
+int secret=0
+int allowed=0
+uint64_t diff[1000]
+while((pwd = read_from_user()) && strcmp(pwd, "q")) {
+    for (int j=0; j < 1000; j++) {
+        tsc1 = rdtsc_begin()
+        ecall ecall_get_secret(&allowed, &secret, pwd)
+        tsc2 = rdtsc_end()
+        diff[j] = tsc2 - tsc1
+    ;}
+    if(allowed) {
+	    printf("allowed\n")
+    } else {
+	    printf("denied\n")
+    ;}
+    qsort(diff, 1000, sizeof(uint64_t), compare)
+    med = diff[500]
+    printf("time (med clock cycles): %lu\n", med)
+    free(pwd)
+;}
